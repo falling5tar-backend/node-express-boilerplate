@@ -1,2 +1,6 @@
-module.exports.Token = require('./token.model');
-module.exports.User = require('./user.model');
+const config = require('../config/config')
+const mysql = require('mysql2')
+
+const pool = mysql.createPool(config.db)
+
+module.exports = pool
